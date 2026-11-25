@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Jogos Educativos - Acesso Escolar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="container">
+        <section id="tela-login" class="card">
+            <header class="card-header">
+                <h1>Portal de Jogos da Escola</h1>
+                <p>Entre com sua matrícula (aluno) ou login institucional (professor)</p>
+            </header>
+
+            <form id="form-login" novalidate>
+                <div class="input-group">
+                    <label for="identificador">Matrícula ou Login Institucional</label>
+                    <input 
+                        type="text" 
+                        id="identificador" 
+                        placeholder="Ex: 20260201 ou PROF1001" 
+                        autocomplete="off" 
+                        required
+                    >
+                </div>
+
+                <div class="input-group">
+                    <label for="senha">PIN ou Senha</label>
+                    <input 
+                        type="password" 
+                        id="senha" 
+                        placeholder="••••" 
+                        required
+                    >
+                </div>
+
+                <div id="mensagem-erro" class="alerta-erro oculto" role="alert"></div>
+
+                <button type="submit" class="btn-primario">Entrar</button>
+            </form>
+        </section>
+
+        <section id="tela-painel" class="card oculto">
+            <header class="painel-header">
+                <div>
+                    <h2 id="usuario-nome">Olá!</h2>
+                    <span id="usuario-info" class="badge-turma">Perfil</span>
+                </div>
+                <div class="acoes-topo">
+                    <a id="link-admin" href="/admin.html" class="btn-admin oculto">Gerenciar Catálogo</a>
+                    <button id="btn-sair" class="btn-secundario">Sair</button>
+                </div>
+            </header>
+
+            <div class="conteudo-painel">
+                <h3>Jogos Disponíveis para a Turma</h3>
+                <div id="lista-jogos-aluno" class="lista-jogos"></div>
+            </div>
+        </section>
+    </main>
+
+    <script src="auth.js"></script>
+</body>
+</html>

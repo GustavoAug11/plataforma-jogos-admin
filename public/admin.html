@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administração do Catálogo - Portal Escolar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="container container-largo">
+        <section class="card">
+            <header class="painel-header">
+                <div>
+                    <h1>Gestão do Catálogo de Jogos</h1>
+                    <span id="prof-info" class="badge-turma">Perfil Professor</span>
+                </div>
+                <div class="acoes-topo">
+                    <a href="/" class="btn-secundario">Visão do Aluno</a>
+                    <button id="btn-sair-admin" class="btn-secundario">Sair</button>
+                </div>
+            </header>
+
+            <form id="form-jogo" class="form-grid">
+                <h3 id="titulo-form">Cadastrar Novo Jogo</h3>
+                <input type="hidden" id="jogo-id">
+
+                <div class="input-group">
+                    <label for="jogo-titulo">Título do Jogo</label>
+                    <input type="text" id="jogo-titulo" placeholder="Ex: Dedução Numérica" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="jogo-faixa">Faixa Etária / Turmas</label>
+                    <input type="text" id="jogo-faixa" placeholder="Ex: 7 a 13 anos (2º ao 7º ano)" required>
+                </div>
+
+                <div class="input-group full-width">
+                    <label for="jogo-descricao">Descrição Pedagógica</label>
+                    <input type="text" id="jogo-descricao" placeholder="Breve objetivo do jogo" required>
+                </div>
+
+                <div class="input-group full-width">
+                    <label for="jogo-rota">Rota Local do Jogo</label>
+                    <input type="text" id="jogo-rota" placeholder="Ex: /jogos/deducao-numerica" required>
+                </div>
+
+                <div id="admin-feedback" class="alerta-erro oculto full-width"></div>
+
+                <div class="botoes-form full-width">
+                    <button type="submit" id="btn-salvar-jogo" class="btn-primario">Salvar Jogo</button>
+                    <button type="button" id="btn-cancelar-edicao" class="btn-secundario oculto">Cancelar Edição</button>
+                </div>
+            </form>
+
+            <hr class="divisor">
+
+            <h3>Jogos Cadastrados no Sistema</h3>
+            <div id="tabela-jogos-admin" class="lista-jogos"></div>
+        </section>
+    </main>
+
+    <script src="admin.js"></script>
+</body>
+</html>
